@@ -1,11 +1,11 @@
 import pandas as pd
 
-def create_features(data, horizons: list[int]) -> pd.DataFrame:
+def create_features(data, horizons):
     # Create additional features based on rolling averages and trends
     new_predictors = []
 
     for horizon in horizons:
-        rolling_averages = data.rollling(horizon).mean()
+        rolling_averages = data.rolling(horizon).mean()
         ratio_column = f'Close_Ratio_{horizon}'
         data[ratio_column] = data['Close'] / rolling_averages['Close']
 
