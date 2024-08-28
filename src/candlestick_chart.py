@@ -1,5 +1,5 @@
 import plotly.graph_objs as go
-from data_loader import load_data
+from src.data_loader import load_data
 
 def plot_candlestick_chart(data):
     # Create a candlestick chart of the historical stock prices
